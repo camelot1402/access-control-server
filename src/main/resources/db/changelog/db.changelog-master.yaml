@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+        id:  1
+        author: Ayaz
+        changes:
+          - createTable:
+              tableName: rooms
+              columns:
+                - column:
+                    name: id
+                    type: bigint
+                    autoIncrement: true
+                    constraints:
+                      primaryKey: true
+                      nullable: false
+
+  -  changeSet:
+       id:  2
+       author: Ayaz
+       changes:
+         -  createTable:
+              tableName: users
+              columns:
+                -  column:
+                     name: id
+                     type: bigint
+                     autoIncrement: true
+                     constraints:
+                       primaryKey: true
+                       nullable: false
+                - column:
+                    name: room_id
+                    type: bigint
+                    constraints:
+                      foreignKeyName: room_id
+                      references: rooms(id)
