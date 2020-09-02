@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.NoSuchElementException;
+
 @Log
 @Data
 @Controller
@@ -26,7 +28,11 @@ public class UserController {
         try {
             return userService.check(roomId, entrance, keyId);
         } catch (DivisionException | RoomAccessException e) {
+            e.printStackTrace();
             throw new ResponseStatusException(HttpStatus.FORBIDDEN);
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
