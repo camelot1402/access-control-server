@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>io.piano</groupId>
-    <artifactId>admission-pass-system</artifactId>
+    <artifactId>access-control-system</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>admission-pass-system</name>
+    <name>access-control-system</name>
     <description>Test task for piano.io</description>
 
     <properties>
